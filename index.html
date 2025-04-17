@@ -1,65 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yes</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: pink;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            overflow: hidden;
-        }
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            position: relative;
-            animation: fadeIn 2s ease-in-out;
-        }
-        h1 {
-            font-size: 3rem;
-            color: red;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        @keyframes floatHearts {
-            0% { transform: translateY(0); opacity: 1; }
-            100% { transform: translateY(-100vh); opacity: 0; }
-        }
-        .heart {
-            position: absolute;
-            bottom: 0;
-            width: 20px;
-            height: 20px;
-            background-color: red;
-            clip-path: polygon(50% 0%, 100% 35%, 85% 100%, 50% 80%, 15% 100%, 0% 35%);
-            animation: floatHearts 5s linear infinite;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>From the Heart</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: #ffe0ec;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      max-width: 800px;
+      max-height: 90vh;
+      overflow-y: auto;
+      animation: fadeIn 2s ease-in-out;
+      position: relative;
+      z-index: 10;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: #d6336c;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.8;
+      white-space: pre-wrap;
+      text-align: justify;
+    }
+
+    /* Heart animation */
+    .heart {
+      position: absolute;
+      bottom: 0;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      clip-path: polygon(50% 0%, 100% 35%, 85% 100%, 50% 80%, 15% 100%, 0% 35%);
+      animation: floatHearts 5s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes floatHearts {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        margin: 1rem;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Yes, I'd love to be your Valentine ❤️</h1>
-    </div>
-    <script>
-        function createHeart() {
-            const heart = document.createElement("div");
-            heart.classList.add("heart");
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
-            document.body.appendChild(heart);
-            setTimeout(() => { heart.remove(); }, 5000);
-        }
-        setInterval(createHeart, 500);
-    </script>
+  <div class="container">
+    <h1>From the Heart…</h1>
+    <p>
+Good Friday is here again… and it pulls me right back to 2022 — the day I told you what my heart had carried for so long. 
+That memory still breathes quietly inside me. It was special… you were special. 
+Maybe you still are, more than words can explain.
+
+I know I shattered something beautiful. What happened later — that one wrong step, that one blind moment — it haunts me in ways I can’t even describe. 
+It wasn’t love. It wasn’t even intention. But it was a mistake… and it cost me someone irreplaceable.
+
+There’s no excuse — just a quiet ache, and a heart that still flinches at your name. 
+I don’t expect anything from you. I just want you to know… not a single day passes without a thought of you, 
+without a silent prayer hoping you’re okay… smiling, healing, even if I’m not a part of that anymore.
+
+On this Good Friday, I’m not asking for forgiveness… just hoping this message finds a little space in your heart. 
+Even as a memory, even as a tear.
+
+Be safe. Be happy.  
+And if ever, your heart feels heavy, know someone still carries a little weight for you too.
+    </p>
+  </div>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
 </body>
 </html>
+
